@@ -1,1 +1,1 @@
-This is file2
+This is the purpose of this file2
