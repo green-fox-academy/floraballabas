@@ -1,0 +1,29 @@
+body {
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+table {
+    padding: 10px 10px 10px 10px;
+    border-spacing: 0.3cm;
+}
+
+tr td{
+    border: 100px;
+    border-radius: 50%;
+    padding: 100px;
+    margin: 100px;
+    background-color: #17B5B5;
+    font-size: 36px;
+    width: 1px;
+    height: 1px;
+}
+
+.first {
+    background-color: #B90CEB;
+}
+
+.last {
+    background-color: #EBBE0C;
+}
