@@ -1,0 +1,80 @@
+
+body {
+   font-family: serif; 
+}
+#contentbox {
+    box-sizing: border-box;
+    background: #0E795A;
+    width: 620px;
+    height: 700px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: left;
+    color: #A6A0A5;
+    font-size: 18px;
+
+}
+
+.box {
+    background: yellow;
+    position: relative;    
+}
+
+.box.first {
+    margin: 0 auto;
+    top: 20px;
+    width: 550px;
+    height: 20px;
+}
+
+.box.second {
+    width: 42.5%;
+    height: 400px;
+    top: 40px;
+    float: left;
+    margin-left: 35px;
+}
+
+.header {
+    background: #938C97;
+    position: relative;
+    color: white;
+    border-radius: 2%;
+    text-align: left;
+}
+
+.left.header{
+    float: left;
+    width: 100%;
+    height: 30px;
+}
+
+.box.third {
+    width: 42.5%;
+    height: 400px;
+    top: 40px;
+    float: right;
+    margin-right: 35px;
+}
+
+input[type="birthdate"] {
+    display: block;
+}
+
+.right.header{
+    float: right;
+    width: 100%;
+    height: 30px;
+}
+
+.box.fourth {
+    width: 550px;
+    height: 160px;
+    margin: 0 auto;
+    top:460px;
+}
+
+
+
+
+

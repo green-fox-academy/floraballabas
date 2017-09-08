@@ -1,0 +1,39 @@
+<doctype html>
+    <html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>HTML form</title>
+    </head>
+    <body>
+        <form action="/my-handling-form-page" method="post">
+        <div id="contentbox">
+            <div class="box first">Profil</div>
+            <div class="box second">
+                <div class="left header">Személyes adatok
+                </div>
+                <label for="name">Név<abbr title="required">*</abbr></label>
+                <input type="text" id="name" name="user_name" style="width: 100%">
+                <label for="birthdate">Születési éved</label>
+                <input type="text" id="birthdate" name="user-birthdate" placeholder="Pl. 1993" style="width: 80px">
+                <p>Nemed</p>
+                    <label for="female">nő</label>
+                    <input type="radio" id="female" name="gender">
+                    <label for="male">férfi</label>
+                    <input type="radio" id="male" name="gender">
+            
+            </div>
+            <div class="box third">
+                <div class="right header">Kapcsolat
+                </div>
+                <label for="telephone">Telefonszám<abbr title="required">*</abbr>
+                <input type="text" id="telephone" name="user_phone" placeholder="+36 --- --- ---" style="width: 100%">
+                <label for="mail">E-mail:<abbr title="required">*<abbr></label>
+                <input type="email" id="mail" name="user_mail" placeholder="név@domain.hu" style="width: 100%">
+                </div>
+            <div class="box fourth"></div>
+    
+        </div>
+        </form>
+
+    </body>
+    </html>
