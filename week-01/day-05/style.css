@@ -4,7 +4,7 @@ body {
 }
 #contentbox {
     box-sizing: border-box;
-    background: #0E795A;
+    background: #DCD6CD;
     width: 620px;
     height: 700px;
     margin: 0 auto;
@@ -16,7 +16,7 @@ body {
 }
 
 .box {
-    background: yellow;
+    background: #DCD6CD;
     position: relative;    
 }
 
