@@ -8,9 +8,10 @@ namespace ConsoleApp8
         {
             int a = 123;
             int b = 526;
+            int c = a + b;
 
-            a = b;
-            b = a - 403;
+            a = c - a;
+            b = c - b;
             Console.WriteLine(b);
         }
     }
