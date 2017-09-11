@@ -1,0 +1,10 @@
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\bin\Debug\netcoreapp1.1\ConsoleApp5.deps.json
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\bin\Debug\netcoreapp1.1\ConsoleApp5.runtimeconfig.json
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\bin\Debug\netcoreapp1.1\ConsoleApp5.runtimeconfig.dev.json
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\bin\Debug\netcoreapp1.1\ConsoleApp5.dll
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\bin\Debug\netcoreapp1.1\ConsoleApp5.pdb
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\obj\Debug\netcoreapp1.1\ConsoleApp5.csprojResolveAssemblyReference.cache
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\obj\Debug\netcoreapp1.1\ConsoleApp5.csproj.CoreCompileInputs.cache
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\obj\Debug\netcoreapp1.1\ConsoleApp5.AssemblyInfo.cs
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\obj\Debug\netcoreapp1.1\ConsoleApp5.dll
+C:\Users\Flóra\greenfox\floraballabas\week-02\day-01\exercise-05\ConsoleApp5\obj\Debug\netcoreapp1.1\ConsoleApp5.pdb
