@@ -15,16 +15,23 @@ namespace Matchmaking
             var boys = new List<string> { "Joe", "Fred", "Béla", "Todd", "Neef", "Jeff" };
             var order = new List<string>();
 
-            for (int i = 0; i < girls.Count; i++)
+            for (int i = 0; i < boys.Count; i++)
             {
-                order.Add(girls[i]);
-                order.Add(boys[i]);
+                if (girls.Count > i)
+                {
+                    order.Add(girls[i]);
+                }
+                if (boys.Count > i)
+                {
+                    order.Add(boys[i]);
+                }
+ 
             }
 
-            if (girls.Count + boys.Count != order.Count)
-            {
-                order.Add(boys[5]);
-            }
+            //if (girls.Count + boys.Count != order.Count)
+            //{
+                //order.Add(boys[5]);
+            //}
 
             foreach (var or in order)
             {
