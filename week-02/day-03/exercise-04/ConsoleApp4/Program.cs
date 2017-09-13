@@ -18,9 +18,8 @@ namespace ConsoleApp4
             //  - Download games
             //      - Diablo
             string todoText = "My todo:";
-            todoText = todoText.Insert(8, "\n - Download games");
-            string indent = "   ";
-            todoText = todoText.Insert(26, "\n"+indent+" - Diablo");
+            todoText = todoText.Insert(todoText.Length, "\n - Download games");
+            todoText = todoText.Insert(todoText.Length, "\n \t - Diablo");
 
 
             Console.WriteLine(todoText);
