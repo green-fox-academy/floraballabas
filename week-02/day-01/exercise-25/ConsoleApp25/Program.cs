@@ -13,7 +13,7 @@ namespace ConsoleApp25
             for (int i = 1; i < 11; i++)
             {
 
-                Console.WriteLine("{ 0 } * { 1 } = { 2 }",i,input,i*input);
+                Console.WriteLine(i + " * " + input + " = " + i * input);
             }
             Console.ReadKey();
 
