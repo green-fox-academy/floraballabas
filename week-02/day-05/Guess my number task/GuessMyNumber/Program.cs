@@ -17,25 +17,35 @@ namespace GreenFox
             Console.WriteLine("Allright, I will think of a number between "+range1+" and "+range2);
             Random random = new Random();
             int guessNumber = random.Next(range1, range2);
-            Console.WriteLine("Let's start. Make your guess!");
+            Console.WriteLine("Let's start. You have 5 lives!");
             int input = 0;
-
-            while (input != guessNumber)
+            int lives = 5;
+            
+            while (input != guessNumber && lives != 0)
             {
                 input = int.Parse(Console.ReadLine());
                 if (input > guessNumber)
                 {
                     Console.WriteLine("My number is lower");
+                    lives--;
+                    Console.WriteLine("You have "+lives+"lives left");
                 }
                 else if (input < guessNumber)
                 {
                     Console.WriteLine("My number is higher");
+                    lives--;
+                    Console.WriteLine("You have " + lives + "lives left");
                 }
-                Console.WriteLine("Try to guess which number I am thinking of");
+                if (input != guessNumber)
+                    Console.WriteLine("Try to guess which number I am thinking of");
             }
             if (input == guessNumber)
             {
                 Console.WriteLine("You found the number: "+guessNumber);
+            }
+            else if (lives == 0)
+            {
+                Console.WriteLine("You are out of lives. Better luck next time!");
             }
             Console.ReadLine();
         }
