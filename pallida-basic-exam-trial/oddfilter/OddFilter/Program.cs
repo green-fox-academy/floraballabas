@@ -11,32 +11,33 @@ namespace OddFilter
             // and returns a new list with every odd element from the orignal list
 
             // In case of the example input above, the given PrintList function should print 1 3 5 
-            PrintList();
+            OddFilter();
 
             Console.ReadLine();
         }
-        public static void OddFilter()
+        private static void OddFilter()
         {
-            var toBeSorted = new List<int> { 1, 2, 3, 4, 5 };
-            var oddElements = new List<int>();
+            List<int> toBeSorted = new List<int> { };
+            List<int> oddElements = new List<int> { };
+            Console.WriteLine("Please tell me how many numbers you will enter for me to sort out the odd numbers");
+            int numbersCount = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numbersCount; i++)
+            {
+                Console.WriteLine("Please enter a number");
+                int numbers = int.Parse(Console.ReadLine());
+                toBeSorted.Add(numbers);
+            }
 
             for (int i = 0; i < toBeSorted.Count; i++)
             {
                 if (toBeSorted[i] % 2 != 0)
-                {
                     oddElements.Add(toBeSorted[i]);
-                }
             }
-            foreach (int odd in oddElements)
+            Console.WriteLine("These were the odd numbers in your list:");
+            foreach (var odd in oddElements)
             {
                 Console.Write(odd);
-            }
-        }
-        public static void PrintList()
-        {
-            foreach (int odd in )
-            {
-                Console.Write("{0} ", element);
             }
         }
     }
