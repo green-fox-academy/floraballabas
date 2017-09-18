@@ -28,20 +28,13 @@ namespace UrlsFromHandles
             {
                 Console.WriteLine("Tell me the github handle");
                 string handle = Console.ReadLine();
-                handleList.Add(handle);
+                handleList.Add("https://github.com/greenfox-academy/"+handle);
             }
-            Console.Write("Your handles were: ");
-
-            foreach (var originalHandle in handleList)
-            {
-                Console.Write(originalHandle+", ");
-            }
-
-            Console.WriteLine();
-            Console.Write("And here is the github url for them: ");
+           
+            Console.Write("Here is the github url for them: ");
             foreach (var gitHubUrl in handleList)
             {
-                Console.Write("https://github.com/greenfox-academy/" + gitHubUrl + ", ");
+                Console.Write(gitHubUrl+", ");
             }
         }
     }
