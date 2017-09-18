@@ -21,8 +21,10 @@ namespace NameFromEmail
             string user = email.Substring(0, email.IndexOf("@"));
 
             string firstName = user.Substring(0, user.IndexOf("."));
-            string lastName = user.Substring(user.IndexOf(".")+1);
+            firstName = char.ToUpper(firstName[0]) + firstName.Substring(1);
 
+            string lastName = user.Substring(user.IndexOf(".")+1);
+            lastName = char.ToUpper(lastName[0]) + lastName.Substring(1);
 
             Console.WriteLine(lastName +" "+ firstName);
 
