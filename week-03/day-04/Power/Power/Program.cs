@@ -12,16 +12,15 @@ namespace Power
         {
             // Given base and n that are both 1 or more, compute recursively (no loops)
             // the value of base to the n power, so powerN(3, 2) is 9 (3 squared).
-            Console.WriteLine(Recursive(2));
+            Console.WriteLine(Recursive(4, 2));
             Console.ReadLine();
         }
 
-        private static int Recursive(int n)
+        private static int Recursive(int b, int n)
         {
-            int b = 3;
-            if (n == 0)
+            if (b == 0 || n == 0)
                 return 1;
-            return b * Recursive(n - 1);
+            return b * Recursive( b, n - 1);
         }
     }
 }
