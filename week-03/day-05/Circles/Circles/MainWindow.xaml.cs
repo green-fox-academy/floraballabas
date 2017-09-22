@@ -26,7 +26,7 @@ namespace Circles
             InitializeComponent();
             double x = 0;
             double y = 0;
-            double diameter = 300;
+            double diameter = (canvas.Width+canvas.Height)/2;
             
             DrawCircles(x, y, diameter);
 
@@ -44,10 +44,17 @@ namespace Circles
             if (diameter > 50)
             {
                 DrawCircles(x + (diameter / 2.7), y, diameter / 4);
+                DrawCircles(x + (diameter * 0.26), y + (diameter * 0.18), diameter / 4);
+                DrawCircles(x + (diameter * 0.49), y + (diameter * 0.18), diameter / 4);
                 DrawCircles(x + (diameter * 0.18), y+(diameter*0.4), diameter / 4);
+                DrawCircles(x + (diameter * 0.06), y + (diameter * 0.58), diameter / 4);
+                DrawCircles(x + (diameter * 0.29), y + (diameter * 0.58), diameter / 4);
+                DrawCircles(x + (diameter * 0.57), y + (diameter * 0.4), diameter / 4);
+                DrawCircles(x + (diameter * 0.46), y + (diameter * 0.58), diameter / 4);
+                DrawCircles(x + (diameter * 0.69), y + (diameter * 0.58), diameter / 4);
             }
             return 0;
-
+                
         }
        
     }
