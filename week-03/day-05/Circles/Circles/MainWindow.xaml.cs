@@ -34,12 +34,17 @@ namespace Circles
         public double DrawCircles(double x, double y, double diameter)
         {
             var foxdraw = new FoxDraw(canvas);
+            Random rnd = new Random();
+            Byte[] b = new Byte[3];
+            rnd.NextBytes(b);
+            Color color = Color.FromRgb(b[0], b[1], b[2]);
 
             foxdraw.BackgroundColor(Colors.Beige);
             foxdraw.FillColor(Color.FromArgb(0, 255, 255, 255));
             foxdraw.DrawEllipse(x, y, diameter, diameter);
             foxdraw.DrawEllipse(x+(diameter*0.25), y, diameter/2, diameter/2);
             foxdraw.DrawEllipse(x +(diameter * 0.05), y+(diameter*0.4), diameter / 2, diameter / 2);
+            foxdraw.FillColor(color);
             foxdraw.DrawEllipse(x + (diameter * 0.45), y + (diameter * 0.4), diameter / 2, diameter / 2);
             if (diameter > 50)
             {
