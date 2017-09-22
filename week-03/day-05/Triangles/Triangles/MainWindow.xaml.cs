@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GreenFox;
 
-namespace Exercise_11
+namespace Triangles
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,26 +24,17 @@ namespace Exercise_11
         public MainWindow()
         {
             InitializeComponent();
-            Fractals();
-            
-        }
-
-        private void Fractals()
-        {
-            double size = 100;
-            var foxdraw = new FoxDraw(canvas);
-            for (int i = 0; i < 3; i++)
-            {
-                double startPoint = 0 + i * 100;
-                for (int j = 0; j < 3; j++)
-                {
-                    foxdraw.DrawRectangle(0+j*100, startPoint, size, size);
-                }
-            }
-        }
-        private void Recursion()
-        {
+            DrawTriangle(200, 280, 300, 280);
 
         }
+        public void DrawTriangle(int x, int y, int endX, int endY)
+        {
+            int distanceX = endX - x;
+            var foxDraw = new FoxDraw(canvas);
+            foxDraw.DrawLine(x, y, endX, endY);
+            foxDraw.DrawLine(endX, endY, endX - distanceX / 2, (y/3)*2);
+            foxDraw.DrawLine(x, y, endX - distanceX / 2, (y / 3) * 2);
+        }
+
     }
 }

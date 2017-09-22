@@ -36,24 +36,16 @@ namespace CheckerBoard
                     if (i % 2 == 0)
                     {
                         if (j % 2 == 0)
-                        {
                             foxDraw.FillColor(Colors.White);
-                        }
                         else
-                        {
                             foxDraw.FillColor(Colors.Black);
-                        }
                     }
                     else 
                     {
                         if (j % 2 == 0)
-                        {
                             foxDraw.FillColor(Colors.Black);
-                        }
                         else
-                        {
                             foxDraw.FillColor(Colors.White);
-                        } 
                     }
                     foxDraw.DrawRectangle(0 + 35 * j, startPoint, x, x);
                 }
