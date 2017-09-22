@@ -24,13 +24,14 @@ namespace Circles
         public MainWindow()
         {
             InitializeComponent();
-            int x = 0;
-            int y = 0;
-            int diameter = 300;
+            double x = 0;
+            double y = 0;
+            double diameter = 300;
+            
             DrawCircles(x, y, diameter);
 
         }
-        public void DrawCircles(int x, int y, int diameter)
+        public double DrawCircles(double x, double y, double diameter)
         {
             var foxdraw = new FoxDraw(canvas);
 
@@ -40,6 +41,13 @@ namespace Circles
             foxdraw.DrawEllipse(x+(diameter*0.25), y, diameter/2, diameter/2);
             foxdraw.DrawEllipse(x +(diameter * 0.05), y+(diameter*0.4), diameter / 2, diameter / 2);
             foxdraw.DrawEllipse(x + (diameter * 0.45), y + (diameter * 0.4), diameter / 2, diameter / 2);
+            if (diameter > 50)
+            {
+                DrawCircles(x + (diameter / 2.7), y, diameter / 4);
+                DrawCircles(x + (diameter * 0.18), y+(diameter*0.4), diameter / 4);
+            }
+            return 0;
+
         }
        
     }
