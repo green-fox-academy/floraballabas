@@ -26,7 +26,7 @@ namespace Tapestry
             InitializeComponent();
             
             double boxSize = ((canvas.Width + canvas.Height) / 6);
-            double x = 167;
+            double x = 166;
             double y = 167;
 
             DrawTapestry(x, y, boxSize, boxSize);
@@ -38,9 +38,16 @@ namespace Tapestry
             foxDraw.BackgroundColor(Colors.Beige);
             foxDraw.FillColor(Colors.Black);
             foxDraw.DrawRectangle(x, y, size1, size2);
-            if (totalSize > 10)
+            if (totalSize > 1)
             {
-                DrawTapestry(x - (totalSize*0.5), y - (totalSize*0.6), size1/4, size2/4);
+                DrawTapestry(x - (totalSize * 0.69), y - (totalSize * 0.65), size1 / 3, size2 / 3);
+                DrawTapestry(x - (totalSize * 0.69), y + (totalSize * 0.32), size1 / 3, size2 / 3);
+                DrawTapestry(x - (totalSize * 0.69), y + (totalSize * 1.30), size1 / 3, size2 / 3);
+                DrawTapestry(x + (totalSize * 0.32), y + (totalSize * 1.30), size1 / 3, size2 / 3);
+                DrawTapestry(x + (totalSize * 1.35), y + (totalSize * 1.30), size1 / 3, size2 / 3);
+                DrawTapestry(x + (totalSize * 1.35), y + (totalSize * 0.32), size1 / 3, size2 / 3);
+                DrawTapestry(x + (totalSize * 1.35), y - (totalSize * 0.65), size1 / 3, size2 / 3);
+                DrawTapestry(x + (totalSize * 0.32), y - (totalSize * 0.65), size1 / 3, size2 / 3);
             }
             return 0;
         }
