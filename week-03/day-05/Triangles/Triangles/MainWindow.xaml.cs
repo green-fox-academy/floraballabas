@@ -24,38 +24,60 @@ namespace Triangles
         public MainWindow()
         {
             InitializeComponent();
-            int x = 50;
-            int y = 0;
-            int w = 250;
-            int h = 150;
+            double x = 0;
+            double y = 0;
+            double w = canvas.Width;
+            double h = canvas.Height;
             DrawTriangle(x, y, w, h);
 
         }
-        public int DrawTriangle(int x, int y, int end)
+        public double DrawTriangle(double x, double y, double w, double h)
         {
-            int distanceX = endX - x;
-            int distanceY = y - y / 2;
             var foxDraw = new FoxDraw(canvas);
-            foxDraw.DrawLine(x, y, endX, endY);
-            foxDraw.DrawLine(endX, endY, endX - distanceX / 2, endY / 2);
-            foxDraw.DrawLine(x, y, endX - distanceX / 2, endY / 2);
-            if (distanceX > 150)
-                return DrawTriangle(x - (distanceX / 2), (y / 3) * 2, endX - (distanceX / 2 + distanceX / 6), (endY / 3) * 2);
+            double distance = w - x;
+            foxDraw.DrawLine(x, y, w, y);
+            foxDraw.DrawLine(w, y, w/2, h);
+            foxDraw.DrawLine(w/2, h, x, y);
+            //foxDraw.DrawLine(x, y, w/2, y);
+            //foxDraw.DrawLine(w / 2, y, w / 4, h / 2);
+            //foxDraw.DrawLine(w/4, h/2, x, y);
+            //foxDraw.DrawLine(w/2, y, w, y);
+            //foxDraw.DrawLine(w, y, w / 1.335, h / 2);
+            //foxDraw.DrawLine(w / 1.335, h / 2, w/2, y);
+            //foxDraw.DrawLine(w/4, h/2, w/1.335, h/2);
+            //foxDraw.DrawLine(w/1.335, h/2, w / 2, h);
+            //foxDraw.DrawLine(w / 2, h, w/4, h/2);
+            if (distance > 10)
+            {
+                DrawTriangle(x, y, w/2, h-h);
+                //DrawTriangle(w/2, y, w, y);
+                //DrawTriangle(w / 4, h / 2, w / 1.335, h / 2);
+            }
             return 0;
+            //int distanceX = endX - x;
+            //int distanceY = y - y / 2;
 
-            //private int DrawTriangle(int x, int y, int w, int h)
-            //{
-            //    int distanceX = w - x;
-            //    var foxDraw = new FoxDraw(canvas);
-            //    foxDraw.DrawLine(x, h, w, h);
-            //    foxDraw.DrawLine(w, h, h, y);
-            //    foxDraw.DrawLine(x, h, h, y);
+            //foxDraw.DrawLine(x, y, endX, endY);
+            //foxDraw.DrawLine(endX, endY, endX - distanceX / 2, endY / 2);
+            //foxDraw.DrawLine(x, y, endX - distanceX / 2, endY / 2);
+            //if (distanceX > 150)
+            //    return DrawTriangle(x - (distanceX / 2), (y / 3) * 2, endX - (distanceX / 2 + distanceX / 6), (endY / 3) * 2);
+            //return 0;
 
-            //    if (distanceX > 150)
-            //        return DrawTriangle(x - (distanceX / 2), y+h/2, w-(3*x), h/2);
-            //    return 0;
-            //}
+            ////private int DrawTriangle(int x, int y, int w, int h)
+            ////{
+            ////    int distanceX = w - x;
+            ////    var foxDraw = new FoxDraw(canvas);
+            ////    foxDraw.DrawLine(x, h, w, h);
+            ////    foxDraw.DrawLine(w, h, h, y);
+            ////    foxDraw.DrawLine(x, h, h, y);
+
+            ////    if (distanceX > 150)
+            ////        return DrawTriangle(x - (distanceX / 2), y+h/2, w-(3*x), h/2);
+            ////    return 0;
+            ////}
         }
+    }
 }
         
 
