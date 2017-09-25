@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostIt", "PostIt.csproj", "{0AB84270-E495-4B8F-AC41-E74FE17DD946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominoes", "Dominoes.csproj", "{B8E287A0-0E02-4014-9F9B-B125CABE9556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0AB84270-E495-4B8F-AC41-E74FE17DD946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AB84270-E495-4B8F-AC41-E74FE17DD946}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AB84270-E495-4B8F-AC41-E74FE17DD946}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AB84270-E495-4B8F-AC41-E74FE17DD946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E287A0-0E02-4014-9F9B-B125CABE9556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E287A0-0E02-4014-9F9B-B125CABE9556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E287A0-0E02-4014-9F9B-B125CABE9556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E287A0-0E02-4014-9F9B-B125CABE9556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {283371C0-4C52-4734-A16F-F525C78A156E}
+		SolutionGuid = {8BBCEC6A-42C7-444E-AB2E-DF9A06DF281E}
 	EndGlobalSection
 EndGlobal

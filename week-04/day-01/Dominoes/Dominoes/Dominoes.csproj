@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0AB84270-E495-4B8F-AC41-E74FE17DD946}</ProjectGuid>
+    <ProjectGuid>{B8E287A0-0E02-4014-9F9B-B125CABE9556}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Post_It</RootNamespace>
-    <AssemblyName>Post-It</AssemblyName>
+    <RootNamespace>Dominoes</RootNamespace>
+    <AssemblyName>Dominoes</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostStruct.cs" />
+    <Compile Include="Domino.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
