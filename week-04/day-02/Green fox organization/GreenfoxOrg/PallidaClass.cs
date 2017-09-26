@@ -11,10 +11,14 @@ namespace GreenfoxOrg
         private string className;
         private string students;
         private string mentors;
-
         private List<Student> studentsList = new List<Student>();
         private List<Mentor> mentorsList = new List<Mentor>();
 
+        public PallidaClass()
+        {
+
+        }
+        
         public void AddStudent(Student Name)
         {
             studentsList.Add(new Student());
