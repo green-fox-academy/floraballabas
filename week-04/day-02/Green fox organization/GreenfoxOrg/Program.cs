@@ -10,6 +10,10 @@ namespace GreenfoxOrg
     {
         static void Main(string[] args)
         {
+            var student = new Student();
+
+            student.GetGoal();
+            Console.ReadLine();
         }
     }
 }

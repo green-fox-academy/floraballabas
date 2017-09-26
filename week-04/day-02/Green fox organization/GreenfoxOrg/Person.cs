@@ -8,9 +8,9 @@ namespace GreenfoxOrg
 {
     class Person
     {
-        public string name;
-        public int age;
-        public string gender;
+        protected string name;
+        protected int age;
+        protected string gender;
 
         public Person(string name = "Jane Doe", int age = 30, string gender = "female")
         {
