@@ -14,9 +14,9 @@ namespace GreenfoxOrg
         private List<Student> studentsList = new List<Student>();
         private List<Mentor> mentorsList = new List<Mentor>();
 
-        public PallidaClass()
+        public PallidaClass(string className)
         {
-
+            this.className = className;
         }
         
         public void AddStudent(Student Name)
