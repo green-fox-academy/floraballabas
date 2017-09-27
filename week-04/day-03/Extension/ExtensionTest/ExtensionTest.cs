@@ -71,7 +71,7 @@ namespace ExtensionTest
         [Test]
         public void testTranslate_bemutatkozik()
         {
-            Assert.AreEqual("bevemuvutavatkovozivik", extension.Translate("beemutatkozik"));
+            Assert.AreEqual("bevemuvutavatkovozivik", extension.Translate("bemutatkozik"));
         }
 
         [Test]
