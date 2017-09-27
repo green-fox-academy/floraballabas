@@ -35,7 +35,7 @@ namespace Extension
 
         public bool IsVowel(char c)
         {
-            return (new List<char>() { 'a', 'u', 'o', 'e', 'i' }).Contains(c);
+            return (new List<char>() { 'a','á','e','é','i','í','o','ó','ö','ő','u','ú','ü','ű'}).Contains(c);
         }
 
         public string Translate(string hungarian)

@@ -59,7 +59,7 @@ namespace ExtensionTest
         [Test]
         public void TestIsVowel_a()
         {
-            Assert.True(extension.IsVowel('m'));
+            Assert.True(extension.IsVowel('á'));
         }
 
         [Test]
@@ -71,7 +71,7 @@ namespace ExtensionTest
         [Test]
         public void testTranslate_bemutatkozik()
         {
-            Assert.AreEqual("bevemuvutavatkovozivik", extension.Translate("bemutatkozik"));
+            Assert.AreEqual("bevemuvutavatkovozivik", extension.Translate("beemutatkozik"));
         }
 
         [Test]
