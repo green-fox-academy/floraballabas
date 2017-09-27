@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetter", "CountLetter.csproj", "{0029D107-BAA2-4DA1-AF38-695AC4B9B15F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0029D107-BAA2-4DA1-AF38-695AC4B9B15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0029D107-BAA2-4DA1-AF38-695AC4B9B15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0029D107-BAA2-4DA1-AF38-695AC4B9B15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0029D107-BAA2-4DA1-AF38-695AC4B9B15F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95AE7A8C-54CB-42B2-873E-F49215F51BE4}
+	EndGlobalSection
+EndGlobal
