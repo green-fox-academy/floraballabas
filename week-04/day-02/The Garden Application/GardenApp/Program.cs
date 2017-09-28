@@ -10,6 +10,26 @@ namespace GardenApp
     {
         static void Main(string[] args)
         {
+            var garden = new Garden("kert");
+
+            var flower1 = new Flower(3);
+            var flower2 = new Flower(0);
+            var tree1 = new Tree(2);
+            var tree2 = new Tree(1);
+
+            garden.AddPlant(flower1);
+            garden.AddPlant(flower2);
+            garden.AddPlant(tree1);
+            garden.AddPlant(tree2);
+
+
+            garden.Print();
+            garden.Watering(40);
+            garden.Print();
+            garden.Watering(70);
+            garden.Print();
+
+            Console.ReadLine();
         }
     }
 }
