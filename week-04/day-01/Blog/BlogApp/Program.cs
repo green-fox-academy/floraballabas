@@ -17,8 +17,13 @@ namespace BlogApp
 
             Blog blog = new Blog();
 
-            blog.Delete(0);
-            blog.Update(1);
+            blog.BlogList.Add(blogpost1);
+            blog.BlogList.Add(blogpost2);
+            blog.BlogList.Add(blogpost3);
+            blog.BlogList.Add(blogpost4);
+
+            blog.Delete(3);
+            blog.Update(2);
             blog.Print();
             Console.ReadLine();
         }
