@@ -11,6 +11,8 @@ namespace Poker
         private string card;
         private bool IsValid;
 
+        
+
         public Cards(string cardInput)
         {
             if (IsItAcceptable(cardInput))

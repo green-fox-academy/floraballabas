@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-    class MainPokerClass
+    public class MainPokerClass
     {
         static void Main(string[] args)
         {
+            var deck = new Deck();
+            deck.GenerateDeck();
+            Console.ReadLine();
         }
     }
 }
