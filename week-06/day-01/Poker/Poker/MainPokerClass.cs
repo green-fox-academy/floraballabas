@@ -10,8 +10,6 @@ namespace Poker
     {
         static void Main(string[] args)
         {
-            var deck = new Deck();
-            deck.GenerateDeck();
             Console.ReadLine();
         }
     }

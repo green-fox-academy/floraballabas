@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GreenfoxOrg
+namespace GreenFoxOrganization
 {
-    class Mentor : Person
+    public class Mentor : Person
     {
         private string level;
+
         public Mentor(string name = "Jane Doe", int age = 30, string gender = "female", string level = "intermediate")
         {
             base.name = name;
@@ -17,13 +14,14 @@ namespace GreenfoxOrg
             this.level = level;
         }
 
-        public new void GetGoal()
+        public override void GetGoal()
         {
-            Console.WriteLine("My goal is: Educate brilliant junior software developers.");
+            Console.WriteLine("Educate brilliant junior software developers.");
         }
-        public new void Introduce()
+
+        public override void Introduce()
         {
-            Console.WriteLine("Hi, I'm "+name+", a "+age+" year old "+gender+" "+level+" mentor.");
+            Console.WriteLine("Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
         }
     }
 }

@@ -18,11 +18,18 @@ namespace Poker
             {
                 foreach (var value in cardValue)
                 {
-                    cardDeck.Add(value+suit);
+                    cardDeck.Add(value + suit);
                 }
             }
             return cardDeck;
         }
+        public List<string> CardDeck
+            {
+                get
+                {
+                    return cardDeck;
+                }
+            }
 
     }
 }
