@@ -15,13 +15,24 @@ namespace Exercise10
             //Write a LINQ Expression to find the foxes with green color and pallida type!
             var listOfFoxes = new List<Fox>();
             var fox1 = new Fox("Alpaga", "green", "pallida");
-            var fox2 = new Fox("Totoro", "green", "static");
-            var fox3 = new Fox("FutureFox", "yellow", "FutureType");
+            var fox2 = new Fox("Oracle", "green", "pallida");
+            var fox3 = new Fox("Rabbit", "green", "pallida");
+            var fox4 = new Fox("Totoro", "green", "static");
+            var fox5 = new Fox("FutureFox", "yellow", "FutureType");
             listOfFoxes.Add(fox1);
             listOfFoxes.Add(fox2);
             listOfFoxes.Add(fox3);
+            listOfFoxes.Add(fox4);
+            listOfFoxes.Add(fox5);
 
-            //Query for green foxes
+            QuerySyntaxForGreenFoxes(listOfFoxes);
+            QuerySyntaxForGreenFoxesAndPallida(listOfFoxes);
+            MethodSyntaxForGreenFoxes(listOfFoxes);
+            MethodSyntaxForGreenFoxesAndPallida(listOfFoxes);
+            Console.ReadLine();
+        }
+        public static void QuerySyntaxForGreenFoxes(List<Fox>listOfFoxes)
+        {
             var listOfFoxesQuery = from fox in listOfFoxes
                                    where fox.Color == "green"
                                    select fox;
@@ -29,30 +40,35 @@ namespace Exercise10
             {
                 Console.WriteLine("The green foxes are called: {0}", fox.Name);
             }
-
-            //Query for green foxes that have pallida type
+        }
+        public static void QuerySyntaxForGreenFoxesAndPallida(List<Fox> listOfFoxes)
+        {
             var listOfFoxesQuery2 = from fox in listOfFoxes
-                                   where fox.Color == "green" && fox.Type == "pallida"
-                                   select fox;
+                                    where fox.Color == "green" && fox.Type == "pallida"
+                                    select fox;
 
             foreach (var fox in listOfFoxesQuery2)
             {
                 Console.WriteLine("The green foxes that have pallida type are called: {0}", fox.Name);
             }
-
-            //Method syntax for green foxes
+        }
+        public static void MethodSyntaxForGreenFoxes(List<Fox> listOfFoxes)
+        {
             var listOfFoxesQueryWithLambda = listOfFoxes.Where(fox => fox.Color == "green").Select(fox => fox);
+
             foreach (var fox in listOfFoxesQueryWithLambda)
             {
                 Console.WriteLine("The green foxes are called: {0}", fox.Name);
             }
-            //Method syntax for green foxes with pallida type
-            var listOfFoxesQueryWithLambda2 = listOfFoxes.Where(fox => fox.Color == "green" && fox.Type == "pallida" ).Select(fox => fox);
+        }
+        public static void MethodSyntaxForGreenFoxesAndPallida(List<Fox> listOfFoxes)
+        {
+            var listOfFoxesQueryWithLambda2 = listOfFoxes.Where(fox => fox.Color == "green" && fox.Type == "pallida").Select(fox => fox);
+
             foreach (var fox in listOfFoxesQueryWithLambda2)
             {
                 Console.WriteLine("The green foxes that have pallida type are called: {0}", fox.Name);
             }
-            Console.ReadLine();
         }
     }
 }
