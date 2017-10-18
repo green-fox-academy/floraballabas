@@ -31,6 +31,7 @@ namespace Exercise10
             MethodSyntaxForGreenFoxesAndPallida(listOfFoxes);
             Console.ReadLine();
         }
+
         public static void QuerySyntaxForGreenFoxes(List<Fox>listOfFoxes)
         {
             var listOfFoxesQuery = from fox in listOfFoxes
@@ -41,6 +42,7 @@ namespace Exercise10
                 Console.WriteLine("The green foxes are called: {0}", fox.Name);
             }
         }
+
         public static void QuerySyntaxForGreenFoxesAndPallida(List<Fox> listOfFoxes)
         {
             var listOfFoxesQuery2 = from fox in listOfFoxes
@@ -52,6 +54,7 @@ namespace Exercise10
                 Console.WriteLine("The green foxes that have pallida type are called: {0}", fox.Name);
             }
         }
+
         public static void MethodSyntaxForGreenFoxes(List<Fox> listOfFoxes)
         {
             var listOfFoxesQueryWithLambda = listOfFoxes.Where(fox => fox.Color == "green").Select(fox => fox);
@@ -61,6 +64,7 @@ namespace Exercise10
                 Console.WriteLine("The green foxes are called: {0}", fox.Name);
             }
         }
+
         public static void MethodSyntaxForGreenFoxesAndPallida(List<Fox> listOfFoxes)
         {
             var listOfFoxesQueryWithLambda2 = listOfFoxes.Where(fox => fox.Color == "green" && fox.Type == "pallida").Select(fox => fox);
