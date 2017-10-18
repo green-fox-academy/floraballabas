@@ -40,6 +40,18 @@ namespace Exercise10
                 Console.WriteLine("The green foxes that have pallida type are called: {0}", fox.Name);
             }
 
+            //Method syntax for green foxes
+            var listOfFoxesQueryWithLambda = listOfFoxes.Where(fox => fox.Color == "green").Select(fox => fox);
+            foreach (var fox in listOfFoxesQueryWithLambda)
+            {
+                Console.WriteLine("The green foxes are called: {0}", fox.Name);
+            }
+            //Method syntax for green foxes with pallida type
+            var listOfFoxesQueryWithLambda2 = listOfFoxes.Where(fox => fox.Color == "green" && fox.Type == "pallida" ).Select(fox => fox);
+            foreach (var fox in listOfFoxesQueryWithLambda2)
+            {
+                Console.WriteLine("The green foxes that have pallida type are called: {0}", fox.Name);
+            }
             Console.ReadLine();
         }
     }
