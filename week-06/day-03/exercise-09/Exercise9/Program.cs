@@ -14,11 +14,12 @@ namespace Exercise9
             char[] letterArray = {'c', 'i', 'c', 'a'};
 
             //Query syntax
-
+            
             //Method syntax
-            //var toStringQueryWithLambda = String.Join("", letterArray.Select(character => character.ToString()));
-            var toStringQueryWithLambda = letterArray.Aggregate(new StringBuilder(), (a, b) => a.Append(b));
+            var toStringQueryWithLambda = String.Join("", letterArray.Select(character => character.ToString()));
             Console.WriteLine(toStringQueryWithLambda);
+            var toStringQueryWithLambda2 = letterArray.Aggregate(new StringBuilder(), (a, b) => a.Append(b));
+            Console.WriteLine(toStringQueryWithLambda2);
 
             Console.ReadLine();
         }
