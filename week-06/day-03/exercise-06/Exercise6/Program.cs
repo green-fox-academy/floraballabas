@@ -16,7 +16,7 @@ namespace Exercise6
             //Query Syntax
             var frequencyOfCharacters = from character in toBeChecked
                                         group character by character into uniqueChars
-                                        select new { uniqueChars.Key, Count = uniqueChars.Count() };
+                                        select new { uniqueChars.Key, Count = uniqueChars.Count() });
             foreach (var character in frequencyOfCharacters)
             {
                 Console.WriteLine("Letter {0} appears {1} times in the string", character.Key, character.Count);
