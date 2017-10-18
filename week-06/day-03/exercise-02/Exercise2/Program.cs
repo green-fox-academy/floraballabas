@@ -17,8 +17,11 @@ namespace Exercise2
             var oddQuery = (from odd in n
                             where odd % 2 == 1 || odd % 2 == -1
                             select odd).Average();
-
             Console.WriteLine(oddQuery);
+
+            var oddQueryWithLambda = n.Where(y => y % 2 == 1 || y % 2 == -1).Average();
+            Console.WriteLine(oddQueryWithLambda);
+
             Console.ReadLine();
         }
     }
