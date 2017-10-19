@@ -14,11 +14,6 @@ namespace TwentyPlusOneApp
 
         public Deck(int numberOfCards)
         {
-            MakeColorDifferent();
-            while (listByColor.Count < numberOfCards)
-            {
-                listByColor.Add(random.Next(0, 4));
-            }
             for (int i = 0; i < numberOfCards; i++)
             {
                 deckOfCards.Add(new Card((CardColor)random.Next(typeof(CardColor).GetEnumNames().Length),
@@ -30,6 +25,7 @@ namespace TwentyPlusOneApp
                 Console.WriteLine(card.GetCard());
             }
         }
+
         public List<Card> DeckOfCards
         {
             get
@@ -39,18 +35,6 @@ namespace TwentyPlusOneApp
             set
             {
                 deckOfCards = value;
-            }
-        }
-        public void MakeColorDifferent()
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                int suit = random.Next(0, 4);
-                while (listByColor.Contains(suit))
-                {
-                    suit = random.Next(0, 4);
-                }
-                listByColor.Add(suit);
             }
         }
 

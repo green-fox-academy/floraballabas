@@ -11,6 +11,8 @@ namespace TwentyPlusOneApp
         static void Main(string[] args)
         {
             var deck = new Deck(20);
+            Console.WriteLine();
+            deck.ShuffleDeck();
             Console.ReadLine();
         }
     }
