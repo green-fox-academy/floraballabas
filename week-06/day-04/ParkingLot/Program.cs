@@ -12,8 +12,6 @@ namespace ParkingLotApp
         {
             var parkinglot = new ParkingLot(250);
 
-            Console.WriteLine();
-
             parkinglot.GetNumberOfSameType();
             parkinglot.GetNumberOfSameColor();
             parkinglot.GetMostFrequentCar();
