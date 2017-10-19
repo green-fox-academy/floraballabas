@@ -10,15 +10,24 @@ namespace TwentyPlusOneApp
     {
         Random random = new Random();
         List<Card> deckOfCards = new List<Card>();
-        List<int> listByColor = new List<int>();
 
         public Deck(int numberOfCards)
         {
             for (int i = 0; i < numberOfCards; i++)
             {
-                deckOfCards.Add(new Card((CardColor)random.Next(typeof(CardColor).GetEnumNames().Length),
+                if (i < numberOfCards / 2)
+                {
+                    deckOfCards.Add(new Card(CardColor.Black,
                     (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
                     (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
+                }
+                else
+                {
+                    deckOfCards.Add(new Card(CardColor.Red,
+                    (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
+                    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
+                }
+                
             }
             foreach (var card in deckOfCards)
             {
@@ -64,11 +73,26 @@ namespace TwentyPlusOneApp
                 Console.WriteLine(card.GetCard());
             }
         }
-        //    public Card DrawTopCard()
-        //    {
-        //        var cardDrawn = deckOfCards[0];
-        //        deckOfCards.RemoveAt(0);
-        //        return cardDrawn;
-        //    }
+
+        public Card PullFirst()
+        {
+            var cardDrawn = deckOfCards[0];
+            deckOfCards.RemoveAt(0);
+            return cardDrawn;
+        }
+
+        public Card PullLast()
+        {
+            var cardDrawn = deckOfCards[deckOfCards.Count -1];
+            deckOfCards.RemoveAt(deckOfCards.Count -1);
+            return cardDrawn;
+        }
+        public Card PullRandom()
+        {
+            int indexToRemove = random.Next(0, deckOfCards.Count - 1);
+            var cardDrawn = deckOfCards[indexToRemove];
+            deckOfCards.RemoveAt(indexToRemove);
+            return cardDrawn;
+        }
     }
 }

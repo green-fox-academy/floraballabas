@@ -13,6 +13,14 @@ namespace TwentyPlusOneApp
             var deck = new Deck(20);
             Console.WriteLine();
             deck.ShuffleDeck();
+            Console.WriteLine();
+
+            var topcard = deck.PullFirst();
+            Console.WriteLine(topcard.GetCard());
+            var lastcard = deck.PullLast();
+            Console.WriteLine(lastcard.GetCard());
+            var randomcard = deck.PullRandom();
+            Console.WriteLine(randomcard.GetCard());
             Console.ReadLine();
         }
     }
