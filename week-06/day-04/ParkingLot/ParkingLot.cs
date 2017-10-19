@@ -54,5 +54,15 @@ namespace ParkingLotApp
             Console.WriteLine("Number of green cars: {0} \nNumber of blue cars: {1} \nNumber of red cars: {2}",
                 greenQuery.Count(), blueQuery.Count(), redQuery.Count());
         }
+        public void GetMostFrequentCar()
+        {
+            var frequencyOfCars = from car in listOfCars
+                                  group car by car.Type into uniqueCars
+                                  orderby uniqueCars.Count() descending
+                                  select new { uniqueCars.Key, Count = uniqueCars.Count() };
+            var mostFrequent = frequencyOfCars.FirstOrDefault();
+
+            Console.WriteLine("The most common car in the parkinglot is: {0}", mostFrequent.Key);
+        }
     }
 }
