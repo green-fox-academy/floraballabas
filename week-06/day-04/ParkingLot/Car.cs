@@ -16,9 +16,7 @@ namespace ParkingLotApp
     {
         green,
         blue,
-        red,
-        yellow,
-        purple
+        red
     }
 
     public class Car

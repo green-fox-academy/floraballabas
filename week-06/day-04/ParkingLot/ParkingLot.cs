@@ -19,5 +19,40 @@ namespace ParkingLotApp
                     (CarColor)random.Next(typeof(CarColor).GetEnumNames().Length)));
             }
         }
+
+        public void GetNumberOfSameType()
+        {
+            var ladaQuery = from lada in listOfCars
+                            where lada.Type == CarType.Lada
+                            select lada;
+
+            var trabantQuery = from trabant in listOfCars
+                            where trabant.Type == CarType.Trabant
+                            select trabant;
+
+            var skodaQuery = from skoda in listOfCars
+                            where skoda.Type == CarType.Skoda
+                            select skoda;
+            Console.WriteLine("Number of ladas: {0} \nNumber of trabants: {1} \nNumber of skodas: {2}", 
+                ladaQuery.Count(),trabantQuery.Count(), skodaQuery.Count());
+        }
+
+        public void GetNumberOfSameColor()
+        {
+            var greenQuery = from color in listOfCars
+                             where color.Color == CarColor.green
+                             select color;
+
+            var blueQuery = from color in listOfCars
+                            where color.Color == CarColor.blue
+                            select color;
+
+            var redQuery = from color in listOfCars
+                           where color.Color == CarColor.red
+                           select color;
+
+            Console.WriteLine("Number of green cars: {0} \nNumber of blue cars: {1} \nNumber of red cars: {2}",
+                greenQuery.Count(), blueQuery.Count(), redQuery.Count());
+        }
     }
 }

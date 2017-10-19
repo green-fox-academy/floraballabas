@@ -10,11 +10,17 @@ namespace ParkingLotApp
     {
         static void Main(string[] args)
         {
-            var parkinglot = new ParkingLot(250);
+            var parkinglot = new ParkingLot(10);
+
             foreach (var car in parkinglot.listOfCars)
             {
                 Console.WriteLine(car.Type+" "+car.Color);
             }
+
+            Console.WriteLine();
+            parkinglot.GetNumberOfSameType();
+            parkinglot.GetNumberOfSameColor();
+
             Console.ReadLine();
         }
     }
