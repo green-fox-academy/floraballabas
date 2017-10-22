@@ -10,11 +10,11 @@ namespace Instruments
     {
         protected int numberOfStrings;
 
-        public abstract void Sound();
+        abstract public string Sound();
 
         public override void Play()
         {
-            Console.WriteLine("{0}, a {1}-stringed instrument that {2}s");
+            Console.WriteLine("{0}, a {1}-stringed instrument that {2}s", name, numberOfStrings, Sound());
         }
     }
 }

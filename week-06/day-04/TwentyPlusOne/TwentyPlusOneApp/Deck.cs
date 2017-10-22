@@ -15,19 +15,29 @@ namespace TwentyPlusOneApp
         {
             for (int i = 0; i < numberOfCards; i++)
             {
-                if (i < numberOfCards / 2)
-                {
-                    deckOfCards.Add(new Card(CardColor.Black,
+                var card = new Card((CardColor)random.Next(typeof(CardColor).GetEnumNames().Length),
                     (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
-                    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
-                }
-                else
+                    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length));
+                while (deckOfCards.Contains(card))
                 {
-                    deckOfCards.Add(new Card(CardColor.Red,
+                    card = new Card((CardColor)random.Next(typeof(CardColor).GetEnumNames().Length),
                     (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
-                    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
+                    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length));
                 }
-                
+                deckOfCards.Add(card);
+                //if (i < numberOfCards / 2)
+                //{
+                //    deckOfCards.Add(new Card(CardColor.Black,
+                //    (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
+                //    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
+                //}
+                //else
+                //{
+                //    deckOfCards.Add(new Card(CardColor.Red,
+                //    (CardSuit)random.Next(typeof(CardSuit).GetEnumNames().Length),
+                //    (CardRank)random.Next(typeof(CardRank).GetEnumNames().Length)));
+                //}
+
             }
             foreach (var card in deckOfCards)
             {
