@@ -15,5 +15,8 @@ namespace WebApp.Models
             ID = id;
             Content = content;
         }
+        public Greeting()
+        {
+        }
     }
 }
