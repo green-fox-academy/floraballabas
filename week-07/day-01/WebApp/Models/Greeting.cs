@@ -9,6 +9,7 @@ namespace WebApp.Models
     {
         public long ID { get; set; }
         public string Content { get; set; }
+        public static int counter = 0;
 
         public Greeting(long id, string content)
         {
@@ -17,6 +18,10 @@ namespace WebApp.Models
         }
         public Greeting()
         {
+        }
+        public int IDCounter()
+        {
+            return counter++;
         }
     }
 }

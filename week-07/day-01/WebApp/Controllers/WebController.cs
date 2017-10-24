@@ -12,13 +12,14 @@ namespace WebApp.Controllers
     [Route("web")]
     public class WebController : Controller
     {
-        [Route("greeting")]
-        public IActionResult Greeting()
+        public static int counter = 1;
+        [Route("greeting/{name}")]
+        public IActionResult Greeting(string name)
         {
             var greeting = new Greeting()
             {
-                ID = 1,
-                Content = "World"
+                ID = counter++,
+                Content = name
             };
 
             return View(greeting);
