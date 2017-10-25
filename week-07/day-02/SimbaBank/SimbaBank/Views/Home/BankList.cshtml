@@ -6,33 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    @{int counter = 0; }
-    @foreach (var character in Model)
-    {
-        counter++;
-        @if (character.IsKing == true)
+    <table border="1" style="background-color:none">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>King</th>
+        </tr>
+        @{int counter = 0;}
+        @foreach (var character in @Model)
         {
-            <table style="background-color:crimson">
-                <tr>
-                    <td>@counter</td>
-                    <td>@character.Name</td>
-                    <td>@character.Balance</td>
-                    <td>@character.AnimalType</td>
-                </tr>
-            </table>
+            counter++;
+            <tr style="@((@character.IsKing) ? "background-color:crimson" : "background-color:none") ">
+                <td align="center">@counter</td>
+                <td align="center">@character.Name</td>
+                <td align="center">@character.AnimalType</td>
+                <td align="center">@character.Balance</td>
+                <td align="center">@character.IsKing</td>
+            </tr>
         }
-        else
-        {
-            <table style="background-color:none">
-                <tr>
-                    <td>@counter</td>
-                    <td>@character.Name</td>
-                    <td>@character.Balance</td>
-                    <td>@character.AnimalType</td>
-                </tr>
-            </table>
-        }
-
-    }
+    </table>
 </body>
+
 </html>
