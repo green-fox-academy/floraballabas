@@ -25,15 +25,7 @@
                 <td align="center">@character.AnimalType</td>
                 <td align="center">@character.Balance</td>
                 <td align="center">@character.IsKing</td>
-                @switch (character.IsBad)
-                {
-                    case true:
-                        <td align="center">Bad</td>
-                        break;
-                    case false:
-                        <td align="center">Good</td>
-                        break;
-                }
+                <td align="center">@((character.IsBad) ? "Bad" : "Good")</td>
             </tr>
         }
     </table>
