@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <table border="1" style="background-color:none">
+    <table border="1" style="background-image:url(https://static.independent.co.uk/s3fs-public/styles/readmore_card/public/thumbnails/image/2017/07/16/11/lion-king.jpg)">
         <tr>
             <th>Index</th>
             <th>Name</th>
@@ -19,7 +19,7 @@
         @foreach (var character in @Model)
         {
             counter++;
-            <tr style="@((@character.IsKing) ? "background-color:crimson" : "background-color:none") ">
+            <tr style="@((@character.IsKing) ? "background-color:crimson" : "color:none") ">
                 <td align="center">@counter</td>
                 <td align="center">@character.Name</td>
                 <td align="center">@character.AnimalType</td>
