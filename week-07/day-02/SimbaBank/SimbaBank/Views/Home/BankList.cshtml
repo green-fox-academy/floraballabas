@@ -10,13 +10,29 @@
     @foreach (var character in Model)
     {
         counter++;
-        <table>
-            <tr>
-                <td>@counter</td>
-                <td>@character.Name</td>
-                <td>@character.Balance</td>
-                <td>@character.AnimalType</td>
-        </table>
+        @if (character.IsKing == true)
+        {
+            <table style="background-color:crimson">
+                <tr>
+                    <td>@counter</td>
+                    <td>@character.Name</td>
+                    <td>@character.Balance</td>
+                    <td>@character.AnimalType</td>
+                </tr>
+            </table>
         }
+        else
+        {
+            <table style="background-color:none">
+                <tr>
+                    <td>@counter</td>
+                    <td>@character.Name</td>
+                    <td>@character.Balance</td>
+                    <td>@character.AnimalType</td>
+                </tr>
+            </table>
+        }
+
+    }
 </body>
 </html>
