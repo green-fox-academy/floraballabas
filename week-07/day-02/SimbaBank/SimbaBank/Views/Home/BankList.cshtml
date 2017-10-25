@@ -1,0 +1,22 @@
+﻿@model List<SimbaBank.Models.BankAccount>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    @{int counter = 0; }
+    @foreach (var character in Model)
+    {
+        counter++;
+        <table>
+            <tr>
+                <td>@counter</td>
+                <td>@character.Name</td>
+                <td>@character.Balance</td>
+                <td>@character.AnimalType</td>
+        </table>
+        }
+</body>
+</html>
