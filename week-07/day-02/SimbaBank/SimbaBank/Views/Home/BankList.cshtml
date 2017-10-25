@@ -13,6 +13,7 @@
             <th>Type</th>
             <th>Balance</th>
             <th>King</th>
+            <th>Status</th>
         </tr>
         @{int counter = 0;}
         @foreach (var character in @Model)
@@ -24,6 +25,15 @@
                 <td align="center">@character.AnimalType</td>
                 <td align="center">@character.Balance</td>
                 <td align="center">@character.IsKing</td>
+                @switch (character.IsBad)
+                {
+                    case true:
+                        <td align="center">Bad</td>
+                        break;
+                    case false:
+                        <td align="center">Good</td>
+                        break;
+                }
             </tr>
         }
     </table>

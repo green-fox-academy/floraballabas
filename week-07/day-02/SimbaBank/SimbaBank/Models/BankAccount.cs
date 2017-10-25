@@ -12,13 +12,15 @@ namespace SimbaBank.Models
         public AnimalType.TypeOfAnimal AnimalType { get; set; }
         public List<BankAccount> ListOfAccounts = new List<BankAccount>();
         public bool IsKing;
+        public bool IsBad;
 
-        public BankAccount(string name, string balance, AnimalType.TypeOfAnimal type, bool isKing)
+        public BankAccount(string name, string balance, AnimalType.TypeOfAnimal type, bool isKing, bool isBad)
         {
             Name = name;
             Balance = balance +".00" + " Zebra";
             AnimalType = type;
             IsKing = isKing;
+            IsBad = isBad;
         }
 
     }
