@@ -1,0 +1,14 @@
+﻿@model GreetSomeone.Models.UserInfo
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("index", "home", FormMethod.Post))
+    {
+        <p>Your name:</p>
+        <p>@Html.TextBoxFor(model => model.Name)</p>
+        <button type="submit">Submit</button>
+    }
+</body>
+</html>
