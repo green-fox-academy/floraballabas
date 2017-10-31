@@ -16,6 +16,11 @@ namespace ToDoApp.Repositories
             TodoContext = todoContext;
         }
 
+        public List<ToDo> GetList()
+        {
+            return TodoContext.Todoes.ToList();
+        }
+
         public void AddTodo()
         {
             var todo = new ToDo()
