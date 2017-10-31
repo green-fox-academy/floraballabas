@@ -21,17 +21,17 @@ namespace Todos.Controllers
             TodoRepository = todoRepository;
         }
 
-        //[Route("/todo")]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        [Route("/")]
+        [Route("")]
         public IActionResult List()
         {
-            string temp = "This is todo";
-            return View((object)temp);
+            return View(TodoRepository.GetLastToDo());
+        }
+
+        [Route("/add")]
+        public IActionResult AddTodo()
+        {
+            TodoRepository.AddTodo();
+            return RedirectToAction("List");
         }
     }
 }

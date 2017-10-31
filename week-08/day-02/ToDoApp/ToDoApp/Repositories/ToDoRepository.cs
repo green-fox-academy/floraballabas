@@ -15,5 +15,22 @@ namespace ToDoApp.Repositories
         {
             TodoContext = todoContext;
         }
+
+        public void AddTodo()
+        {
+            var todo = new ToDo()
+            {
+                Title = "To Understand this",
+                IsDone = false,
+                IsUrgent = true
+            };
+            TodoContext.Add(todo);
+            TodoContext.SaveChanges();
+        }
+
+        public ToDo GetLastToDo()
+        {
+            return TodoContext.Todoes.Last();
+        }
     }
 }
