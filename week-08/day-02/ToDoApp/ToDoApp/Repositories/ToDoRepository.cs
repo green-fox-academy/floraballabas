@@ -21,21 +21,31 @@ namespace ToDoApp.Repositories
             return TodoContext.Todoes.ToList();
         }
 
-        public void AddTodo()
+        public List<ToDo> NotDoneList()
+        {
+            var notDone = from title in TodoContext.Todoes
+                          where title.IsDone == false
+                          select title;
+            return notDone.ToList();
+        }
+
+        public void AddTodo(string title)
         {
             var todo = new ToDo()
             {
-                Title = "To Understand this",
+                Title = title,
                 IsDone = false,
-                IsUrgent = true
+                IsUrgent = false
             };
-            TodoContext.Add(todo);
+
+            TodoContext.Todoes.Add(todo);
             TodoContext.SaveChanges();
         }
 
-        public ToDo GetLastToDo()
+        public void DeleteTodo(int id)
         {
-            return TodoContext.Todoes.Last();
+            ToDo deletedTodo = TodoContext.Todoes.FirstOrDefault(x => x.Id == id);
+
         }
     }
 }
