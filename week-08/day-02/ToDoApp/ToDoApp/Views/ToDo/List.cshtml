@@ -14,6 +14,7 @@
             <th>Title</th>
             <th>IsDone</th>
             <th>IsUrgent</th>
+            <td>Delete Action</td>
         </tr>
         @foreach (var item in @Model)
         {
@@ -22,6 +23,12 @@
                 <td>@item.Title</td>
                 <td>@item.IsDone</td>
                 <td>@item.IsUrgent</td>
+                <td>
+                    <form action="/(@item.Id)/delete" method="post">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         }
     </table>
