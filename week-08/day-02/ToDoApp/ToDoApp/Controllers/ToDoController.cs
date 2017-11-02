@@ -55,23 +55,20 @@ namespace Todos.Controllers
             return RedirectToAction("List");
         }
 
-        //[Route("")]
-        //public IActionResult List()
-        //{
-        //    return View(TodoRepository.GetLastToDo());
-        //}
+        [Route("/{id}/update")]
+        [HttpPost]
+        public IActionResult Update(int id)
+        {
+            var todo = TodoRepository.Updating(id);
+            return View(todo);
+        }
 
-        //[Route("/add")]
-        //public IActionResult AddTodo()
-        //{
-        //    TodoRepository.AddTodo();
-        //    return RedirectToAction("List");
-        //}
-
-        //[Route("/getlist")]
-        //public IActionResult List()
-        //{
-        //    return View(TodoRepository.GetList());
-        //}
+        [Route("/{id}/edit")]
+        [HttpPost]
+        public IActionResult Edit(ToDo todo)
+        {
+            TodoRepository.UpdateTodo(todo);
+            return RedirectToAction("List");
+        }
     }
 }

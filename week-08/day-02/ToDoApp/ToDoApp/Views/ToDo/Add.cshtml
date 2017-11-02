@@ -1,15 +1,22 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model ToDoApp.Models.ToDo
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
-    <form action="/todo/add" method="post">
+    @using (Html.BeginForm("/todo/add", "todo"))
+    {
+        <p>Add new todo:</p>
+        <p>@Html.TextBoxFor(model => model.Title)</p>
+        <button type="submit">Submit</button>
+    }
+    @*<form action="/todo/add" method="post">
         <h1>Add new todo</h1>
         <label for="Title"></label>
         <input type="text" name="Title" />
         <div>
             <button type="submit">Submit</button>
         </div>
-    </form>
+    </form>*@
 </body>
 </html>

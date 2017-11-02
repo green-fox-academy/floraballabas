@@ -48,5 +48,16 @@ namespace ToDoApp.Repositories
             TodoContext.Todoes.Remove(deletedTodo);
             TodoContext.SaveChanges();
         }
+
+        public ToDo Updating(int id)
+        {
+            return TodoContext.Todoes.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void UpdateTodo(ToDo todo)
+        {
+            TodoContext.Todoes.Update(todo);
+            TodoContext.SaveChanges();
+        }
     }
 }
