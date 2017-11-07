@@ -93,5 +93,11 @@ namespace ApiPracticeApp.Controllers
             }
             return Json(new { result = $"{resultNumber}" });
         }
+        [HttpPost]
+        [Route("/array")]
+        public IActionResult ArrayHandler([FromBody] ArrayObject arrayObject)
+        {
+
+        }
     }
 }
