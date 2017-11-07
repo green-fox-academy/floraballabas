@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ApiPracticeApp.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,6 +12,7 @@ namespace ApiPracticeApp.Controllers
     [Route("")]
     public class HomeController : Controller
     {
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -55,6 +57,41 @@ namespace ApiPracticeApp.Controllers
         public IActionResult Append()
         {
             return NotFound();
+        }
+        
+        [HttpPost]
+        [Route("/dountil/{what}")]
+        public IActionResult DoUntil([FromBody] JsonObject jsonObject, string what)
+        {
+            int resultNumber = 0;
+
+            if (jsonObject == null)
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+
+            if (string.IsNullOrEmpty(what))
+            {
+                return NotFound();
+            }
+
+            if (what == "sum")
+            {
+                for (int i = 0; i <= jsonObject.Until; i++)
+                {
+                    resultNumber += i;
+                }
+            }
+
+            if (what == "factor")
+            {
+                resultNumber = 1;
+                for (int i = 1; i <= jsonObject.Until; i++)
+                {
+                    resultNumber *= i;
+                }
+            }
+            return Json(new { result = $"{resultNumber}" });
         }
     }
 }
