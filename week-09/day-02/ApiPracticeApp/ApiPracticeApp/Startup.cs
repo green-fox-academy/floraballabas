@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPracticeApp
 {
@@ -31,6 +32,8 @@ namespace ApiPracticeApp
             }
 
             app.UseMvc();
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
 
             app.Run(async (context) =>
             {
