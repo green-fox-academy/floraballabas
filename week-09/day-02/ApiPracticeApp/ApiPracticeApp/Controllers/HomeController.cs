@@ -42,5 +42,19 @@ namespace ApiPracticeApp.Controllers
             }
             return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" });
         }
+
+        [HttpGet]
+        [Route("/appenda/{appendable}")]
+        public IActionResult AppendA(string appendable)
+        {
+            return Json(new { appended = $"{appendable}a" });
+        }
+
+        [HttpGet]
+        [Route("/appenda/")]
+        public IActionResult Append()
+        {
+            return NotFound();
+        }
     }
 }
