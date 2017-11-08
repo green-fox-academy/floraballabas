@@ -36,6 +36,30 @@ namespace ApiPracticeApp.IntegrationTests
         }
 
         [Fact]
+        public async Task ReturnOkStatusForArray()
+        {
+            var response = await Client.GetAsync("/array");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ReturnOkStatusForDoUntil()
+        {
+            var response = await Client.GetAsync("/dountil/{what}");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ReturnOkStatusForAppenda()
+        {
+            var response = await Client.GetAsync("/appenda/{appendable}");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
         public async Task ReturnNotFoundForAppend()
         {
             var response = await Client.GetAsync("/appenda");
