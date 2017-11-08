@@ -7,6 +7,6 @@ namespace ApiPracticeApp.Models
 {
     public class JsonObject
     {
-        public int Until { get; set; }
+        public int? Until { get; set; }
     }
 }

@@ -5,6 +5,9 @@ using System.Net.Http;
 using Xunit;
 using System.Threading.Tasks;
 using System.Net;
+using ApiPracticeApp.Models;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace ApiPracticeApp.IntegrationTests
 {
@@ -64,6 +67,53 @@ namespace ApiPracticeApp.IntegrationTests
         {
             var response = await Client.GetAsync("/appenda");
 
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ReturnResultWithSum1357()
+        {
+            var usedArray = new ArrayObject
+            {
+                Action = "Sum",
+                Number = new int[] { 1, 3, 5, 7 }
+            };
+
+            var convertedUsedArray = JsonConvert.SerializeObject(usedArray);
+            var data = new StringContent(convertedUsedArray.ToString(),
+                encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("array", data);
+
+            string responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"result\":16}", responseJson);
+        }
+
+        //DoUntil Tests
+        [Fact]
+        public async Task ReturnErrorMessageWithNullInputSum()
+        {
+            var data = new StringContent(content: "", encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("dountil/sum", data);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            string error = "{\"error\":\"Please provide a number!\"}";
+
+            Assert.Equal(error, responseString);
+        }
+
+        [Fact]
+        public async Task ReturnErrorMessageWithOutWhat()
+        {
+            var usedUntil = new JsonObject
+            {
+                Until = 5
+            };
+
+            var convertedUsedUntil = JsonConvert.SerializeObject(usedUntil);
+            var data = new StringContent(convertedUsedUntil.ToString(), encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("dountil", data);
+            
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }

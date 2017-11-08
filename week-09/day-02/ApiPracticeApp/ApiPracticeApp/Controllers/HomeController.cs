@@ -58,41 +58,47 @@ namespace ApiPracticeApp.Controllers
         {
             return NotFound();
         }
-        
-        [HttpPost]
-        [Route("/dountil/{what}")]
-        public IActionResult DoUntil([FromBody] JsonObject jsonObject, string what)
-        {
-            int resultNumber = 0;
 
-            if (jsonObject == null)
+        [Route("/dountil/{what}")]
+        [Route("/dountil")]
+        [HttpPost]
+        public IActionResult Index(string what, [FromBody] JsonObject until)
+        {
+
+            if (until == null || until.Until == null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
-
             if (string.IsNullOrEmpty(what))
             {
                 return NotFound();
             }
-
-            if (what == "sum")
+            else if (what == "sum")
             {
-                for (int i = 0; i <= jsonObject.Until; i++)
-                {
-                    resultNumber += i;
-                }
-            }
+                int sum = 0;
 
-            if (what == "factor")
-            {
-                resultNumber = 1;
-                for (int i = 1; i <= jsonObject.Until; i++)
+                for (int i = 0; i <= until.Until; i++)
                 {
-                    resultNumber *= i;
+                    sum += i;
                 }
+                return Json(new { result = sum });
             }
-            return Json(new { result = $"{resultNumber}" });
+            else if (what == "factor")
+            {
+                int fact = 1;
+                fact = (int)until.Until;
+                for (int i = (int)until.Until - 1; i >= 1; i--)
+                {
+                    fact = fact * i;
+                }
+                return Json(new { result = fact });
+            }
+            else
+            {
+                return Json(new { result = 4 });
+            }
         }
+
         [HttpPost]
         [Route("/array")]
         public IActionResult ArrayHandler([FromBody] ArrayObject arrayObject)
