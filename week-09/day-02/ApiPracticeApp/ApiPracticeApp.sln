@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPracticeApp", "ApiPracticeApp\ApiPracticeApp.csproj", "{01320F87-479B-4589-80D0-8D9D7DAB9353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiPracticeApp", "ApiPracticeApp\ApiPracticeApp.csproj", "{01320F87-479B-4589-80D0-8D9D7DAB9353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPracticeApp.IntegrationTests", "ApiPracticeApp.IntegrationTests\ApiPracticeApp.IntegrationTests.csproj", "{73240633-3E99-48DA-B4D5-012B490F8998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{01320F87-479B-4589-80D0-8D9D7DAB9353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01320F87-479B-4589-80D0-8D9D7DAB9353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01320F87-479B-4589-80D0-8D9D7DAB9353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73240633-3E99-48DA-B4D5-012B490F8998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73240633-3E99-48DA-B4D5-012B490F8998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73240633-3E99-48DA-B4D5-012B490F8998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73240633-3E99-48DA-B4D5-012B490F8998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
