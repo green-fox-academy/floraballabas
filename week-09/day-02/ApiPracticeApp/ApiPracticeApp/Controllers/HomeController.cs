@@ -62,9 +62,8 @@ namespace ApiPracticeApp.Controllers
         [Route("/dountil/{what}")]
         [Route("/dountil")]
         [HttpPost]
-        public IActionResult Index(string what, [FromBody] JsonObject until)
+        public IActionResult DoUntil(string what, [FromBody] JsonObject until)
         {
-
             if (until == null || until.Until == null)
             {
                 return Json(new { error = "Please provide a number!" });
