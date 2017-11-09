@@ -80,9 +80,9 @@ namespace ApiPracticeApp.IntegrationTests
             };
 
             var convertedUsedArray = JsonConvert.SerializeObject(usedArray);
-            var data = new StringContent(convertedUsedArray.ToString(),
+            var content = new StringContent(convertedUsedArray.ToString(),
                 encoding: Encoding.UTF8, mediaType: "application/json");
-            var response = await Client.PostAsync("array", data);
+            var response = await Client.PostAsync("array", content);
 
             string responseJson = await response.Content.ReadAsStringAsync();
 
@@ -115,6 +115,31 @@ namespace ApiPracticeApp.IntegrationTests
             var response = await Client.PostAsync("dountil", data);
             
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ReturnResultWithUntil5()
+        {
+            var usedUntil = new JsonObject
+            {
+                Until = 5
+            };
+
+            var convertedUsedUntil = JsonConvert.SerializeObject(usedUntil);
+            var data = new StringContent(convertedUsedUntil.ToString(), encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("dountil/sum", data);
+
+            var responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"result\":15}", responseJson);
+        }
+        //double test
+        [Fact]
+        public async Task ReturnResultWithInput5()
+        {
+            string test = await Client.GetStringAsync("/doubling?input=5");
+
+            Assert.Equal("{\"received\":5,\"result\":10}", test);
         }
     }
 }
