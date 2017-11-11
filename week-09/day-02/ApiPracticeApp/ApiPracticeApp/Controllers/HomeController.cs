@@ -102,24 +102,26 @@ namespace ApiPracticeApp.Controllers
         [Route("/array")]
         public IActionResult ArrayHandler([FromBody] ArrayObject arrayObject)
         {
+            int result = 0;
+            if (arrayObject.Action == null)
+            {
+                return Json(new { error = "Please provide what to do with the numbers!" });
+            }
             if (arrayObject.Action == "Sum")
             {
-                int result = arrayObject.Sum(arrayObject.Number);
-                return Json(new { result = result });
+                result = arrayObject.Sum(arrayObject.Number);
             }
-
-            if (arrayObject.Action == "Multiply")
+            else if (arrayObject.Action == "Multiply")
             {
-                int result = arrayObject.Multiply(arrayObject.Number);
-                return Json(new { result = result });
+                result = arrayObject.Multiply(arrayObject.Number);
             }
-
-            if (arrayObject.Action == "Double")
+            else if (arrayObject.Action == "Double")
             {
-                int[] result = arrayObject.Double(arrayObject.Number);
-                return Json(new { result = result });
+                int[] resultforDouble = arrayObject.Double(arrayObject.Number);
+                return Json(new { result = resultforDouble });
             }
-            return Json(new { error = "Please provide what to do with the numbers!" });
+            return Json(new { result = result });
+
         }
     }
 }

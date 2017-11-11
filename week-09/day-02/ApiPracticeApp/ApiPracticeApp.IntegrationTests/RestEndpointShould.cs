@@ -71,6 +71,15 @@ namespace ApiPracticeApp.IntegrationTests
         }
 
         [Fact]
+        public async Task ReturnNotFoundForArray()
+        {
+            var response = await Client.GetStringAsync("/array");
+            string error = "{\"error\":\"Please provide what to do with the numbers!\"}";
+
+            Assert.Equal(error, response);
+        }
+
+        [Fact]
         public async Task ReturnResultWithSum1357()
         {
             var usedArray = new ArrayObject
@@ -79,8 +88,8 @@ namespace ApiPracticeApp.IntegrationTests
                 Number = new int[] { 1, 3, 5, 7 }
             };
 
-            var convertedUsedArray = JsonConvert.SerializeObject(usedArray);
-            var content = new StringContent(convertedUsedArray.ToString(),
+            string convertedUsedArray = JsonConvert.SerializeObject(usedArray);
+            var content = new StringContent(convertedUsedArray,
                 encoding: Encoding.UTF8, mediaType: "application/json");
             var response = await Client.PostAsync("array", content);
 

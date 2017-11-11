@@ -1,0 +1,17 @@
+﻿@model AnagramApp.Models.Checker
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @{if (Model.IsAnagram == true)
+      {
+        <p>They are Anagrams!</p>
+      }
+      else
+      {
+        <p>Oops, looks like they are not anagrams. Try another word!</p>  
+      }
+      }
+</body>
+</html>

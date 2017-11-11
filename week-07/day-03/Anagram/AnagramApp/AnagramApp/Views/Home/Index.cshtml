@@ -1,0 +1,17 @@
+﻿@model AnagramApp.Models.Checker
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("index", "home"))
+    {
+        <p>Not sure if two words are anagrams of each other? Let me help you!</p>
+        <p>Word1:</p>
+        <p>@Html.TextBoxFor(model => model.Input1)</p>
+        <p>Word2:</p>
+        <p>@Html.TextBoxFor(model => model.Input2)</p>
+        <button type="submit">Anagrams?</button>
+    }
+</body>
+</html>
