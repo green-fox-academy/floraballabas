@@ -1,0 +1,44 @@
+﻿@model ICollection<RedditApp.Models.Content>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/StyleSheet.css")" />
+</head>
+<body>
+    <h1>Reddit</h1>
+    <h2><a href="/add">Add new Post</a></h2>
+    <table>
+        <tr>
+            <th>SCORE</th>
+            <th>Post</th>
+            <td>Voting</td>
+            <td>Delete Action</td>
+            <td>Update Action</td>
+        </tr>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Votes</td>
+                <td>@item.Post</td>
+                <td>
+                    <a href="/vote/up/@item.Id" title="I like it" class="upvote">+</a>
+                    <a href="/vote/down/@item.Id" title="I hate it" class="downvote">&nbsp-&nbsp</a>
+                </td>
+                <td>
+                    <form action="/(@item.Id)/delete" method="post">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Delete</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/(@item.Id)/update" method="get">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

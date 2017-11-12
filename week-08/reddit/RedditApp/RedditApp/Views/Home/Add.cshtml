@@ -1,0 +1,14 @@
+﻿@model RedditApp.Models.Content
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("add", "home"))
+    {
+        <p>Add new post:</p>
+        <p>@Html.TextBoxFor(model => model.Post)</p>
+        <button type="submit">Submit</button>
+    }
+</body>
+</html>

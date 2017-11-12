@@ -1,0 +1,18 @@
+﻿@model RedditApp.Models.Content
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Edit your post</h1>
+    @using (Html.BeginForm("update", "home"))
+    {
+        <input type="hidden" name="Id" value="@Model.Id">
+        @Html.LabelFor(x => x.Post)@Html.TextBoxFor(x => x.Post)<br />
+        <button type="submit">Submit</button>
+    }
+    <h2><a href="">Cancel</a></h2>
+</body>
+</html>
+
