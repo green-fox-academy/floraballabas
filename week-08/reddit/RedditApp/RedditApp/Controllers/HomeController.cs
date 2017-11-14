@@ -24,6 +24,13 @@ namespace RedditApp.Controllers
             return View(contentRepository.GetList());
         }
 
+        [Route("/api")]
+        [HttpGet]
+        public IEnumerable<Content> IndexWithApi()
+        {
+            return contentRepository.GetList();
+        }
+
         [Route("/add")]
         [HttpGet]
         public IActionResult Add()

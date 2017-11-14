@@ -15,6 +15,7 @@
             <td>Voting</td>
             <td>Delete Action</td>
             <td>Update Action</td>
+            <td>Date</td>
         </tr>
         @foreach (var item in @Model)
         {
@@ -37,6 +38,7 @@
                         <button id="table" class="number" type="submit">Update</button>
                     </form>
                 </td>
+                <td>@item.Date.ToString("MM/dd/yy H:mm:ss")</td>
             </tr>
         }
     </table>

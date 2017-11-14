@@ -9,6 +9,7 @@
     @using (Html.BeginForm("update", "home"))
     {
         <input type="hidden" name="Id" value="@Model.Id">
+        <input type="hidden" name="Votes" value="@Model.Votes">
         @Html.LabelFor(x => x.Post)@Html.TextBoxFor(x => x.Post)<br />
         <button type="submit">Submit</button>
     }

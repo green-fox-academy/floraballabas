@@ -8,9 +8,10 @@ using RedditApp.Entities;
 namespace RedditApp.Migrations
 {
     [DbContext(typeof(ContentContext))]
-    partial class ContentContextModelSnapshot : ModelSnapshot
+    [Migration("20171114123739_secondMigration")]
+    partial class secondMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.3")

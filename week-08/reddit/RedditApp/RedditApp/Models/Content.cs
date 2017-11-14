@@ -10,5 +10,11 @@ namespace RedditApp.Models
         public int Id { get; set; }
         public string Post { get; set; }
         public int Votes { get; set; }
+        public DateTime Date { get; set; }
+
+        public Content()
+        {
+            Date = DateTime.Now;
+        }
     }
 }

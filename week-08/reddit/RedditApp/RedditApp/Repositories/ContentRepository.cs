@@ -17,7 +17,7 @@ namespace RedditApp.Repositories
 
         public List<Content> GetList()
         {
-            return contentContext.Contents.ToList();
+            return contentContext.Contents.OrderByDescending(x => x.Votes).ToList();
         }
 
         public void AddPost(string post)
