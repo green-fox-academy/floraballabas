@@ -5,24 +5,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FoxApp.Repositories;
 using FoxApp.Models;
+using FoxApp.Services;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace FoxApp.Controllers
 {
+    [Route("home")]
     public class HomeController : Controller
     {
-        FoxRepository foxRepository;
+        FoxService foxService;
 
-        public HomeController(FoxRepository foxRepository)
+        public HomeController(FoxService foxService)
         {
-            this.foxRepository = foxRepository;
+            this.foxService = foxService;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        [HttpPost]
+        public IActionResult LoginHandler(Student studentFromForm)
         {
-            return View();
+            if (foxService.AuthenticateStudent(studentFromForm.Name))
+            {
+                return LocalRedirect("/student/" + studentFromForm.Name);
+            }
+
+            return LocalRedirect("/");
+        }
+
+        [HttpGet]
+        [Route("/student/{studentName}")]
+        public IActionResult Profile(string studentName)
+        {
+            var user = foxService.GetStudentInfo(studentName);
+            var projects = foxService.GetStudentProjects(studentName);
+            return View(user);
         }
     }
 }

@@ -14,5 +14,6 @@ namespace FoxApp.Models
         public string PriorityLevel{ get; set; }
         public int StudentId { get; set; }
         public int TeamId { get; set; }
+        public Student Student { get; set; }
     }
 }

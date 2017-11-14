@@ -1,0 +1,22 @@
+﻿@model FoxApp.Models.Student
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Profile page - @Model.Name</title>
+</head>
+<body>
+    <h1>@Model.Name's profile</h1>
+    @*<ul>
+        @foreach (var item in @Model.Name)
+        {
+            <li>[@item.]  @item.DescriptionOfTask - description </li>
+        }
+    </ul>*@
+
+    <h3>Your ID: @Model.Id</h3>
+    <h4>Your Name: @Model.Name</h4>
+
+</body>
+</html>
