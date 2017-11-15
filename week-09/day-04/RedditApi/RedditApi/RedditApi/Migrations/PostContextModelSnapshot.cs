@@ -3,35 +3,33 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using RedditApp.Entities;
+using RedditApi.Entities;
 
-namespace RedditApp.Migrations
+namespace RedditApi.Migrations
 {
-    [DbContext(typeof(ContentContext))]
-    partial class ContentContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(PostContext))]
+    partial class PostContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.3")
+                .HasAnnotation("ProductVersion", "1.1.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RedditApp.Models.Content", b =>
+            modelBuilder.Entity("RedditApi.Models.Post", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Date");
+                    b.Property<int>("Score");
 
-                    b.Property<string>("Post");
+                    b.Property<string>("Title");
 
                     b.Property<string>("Url");
 
-                    b.Property<int>("Votes");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Contents");
+                    b.ToTable("Reddit");
                 });
         }
     }
