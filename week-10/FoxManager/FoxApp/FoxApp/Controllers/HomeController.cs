@@ -11,10 +11,10 @@ using FoxApp.Services;
 
 namespace FoxApp.Controllers
 {
-    [Route("home")]
+    [Route("/home")]
     public class HomeController : Controller
     {
-        FoxService foxService;
+        private FoxService foxService;
 
         public HomeController(FoxService foxService)
         {
@@ -26,14 +26,14 @@ namespace FoxApp.Controllers
         {
             if (foxService.AuthenticateStudent(studentFromForm.Name))
             {
-                return LocalRedirect("/student/" + studentFromForm.Name);
+                return LocalRedirect("/home/" + studentFromForm.Name);
             }
 
-            return LocalRedirect("/");
+            return LocalRedirect("");
         }
 
         [HttpGet]
-        [Route("/student/{studentName}")]
+        [Route("/home/{studentName}")]
         public IActionResult Profile(string studentName)
         {
             var user = foxService.GetStudentInfo(studentName);

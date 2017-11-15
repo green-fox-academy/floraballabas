@@ -9,7 +9,7 @@ namespace FoxApp.Services
 {
     public class FoxService
     {
-        FoxRepository foxRepository;
+        private FoxRepository foxRepository;
 
         public FoxService(FoxRepository foxRepository)
         {
