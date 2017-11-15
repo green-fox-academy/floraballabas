@@ -47,5 +47,24 @@ namespace RedditApiTests
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Fact]
+        public async Task ReturnJsonForAddPosts()
+        {
+            var usedPost = new Post
+            {
+                Title = "Test",
+                Url = "test.hu",
+                Score = 8
+            };
+
+            var convertedUsedPost = JsonConvert.SerializeObject(usedPost);
+            var data = new StringContent(convertedUsedPost, encoding: Encoding.UTF8, mediaType: "application/json");
+            var response = await Client.PostAsync("/posts", data);
+
+            var responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"id\":1013,\"title\":\"Test\",\"url\":\"test.hu\",\"score\":8}", responseJson);
+        }
     }
 }
