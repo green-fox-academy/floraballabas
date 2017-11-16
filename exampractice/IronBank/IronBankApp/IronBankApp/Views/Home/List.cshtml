@@ -1,0 +1,37 @@
+﻿@model List<IronBankApp.Models.BankAccount>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Family Name</th>
+            <th>Balance</th>
+            <th>King</th>
+            <th>Wants Power</th>
+        </tr>
+        @{int counter = 0;}
+        @foreach (var person in @Model)
+        {
+            counter++;
+            <tr style="@((@person.IsKing) ? "background-color:yellow" : "color:none")">
+                <td>@counter</td>
+                <td>@person.Name</td>
+                <td>@person.FamilyName</td>
+                <td>@person.Balance @person.Currency</td>
+                <td>@person.IsKing</td>
+                <td>@person.IsPowerHungry</td>
+                @using (Html.BeginForm("balanceraise", "home"))
+                {
+                    <td><input type="submit" value="Raise" /></td>
+                }
+            </tr>
+        }
+    </table>
+</body>
+</html>

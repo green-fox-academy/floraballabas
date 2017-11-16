@@ -1,0 +1,44 @@
+﻿@model ICollection<BucketListApp.Models.BucketList>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BucketList</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/StyleSheet.css")" />
+</head>
+<body>
+    <p>My BucketList</p>
+    <h2><a href="/add">Add new Wish</a></h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>BucketList</th>
+            <th>Did you plan it already?</th>
+            <th>Did you tick it off from your list yet?</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Activity</td>
+                <td>@((item.IsPlanned) ? "Yes!" : "Not yet")</td>
+                <td>@((item.IsAchieved) ? "Yes!" : "Not yet")</td>
+                <td>
+                    <form action="/(@item.Id)/delete" method="post">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Delete</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/(@item.Id)/update" method="get">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button id="table" class="number" type="submit">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

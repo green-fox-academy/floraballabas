@@ -1,0 +1,18 @@
+﻿@model BucketListApp.Models.BucketList
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add to BucketList</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    @using (Html.BeginForm("/add", "home"))
+    {
+        <p>Add new todo:</p>
+        <p>@Html.TextBoxFor(model => model.Activity)</p>
+        <button type="submit">Submit</button>
+    }
+    <h2><a href="/">Cancel</a></h2>
+</body>
+</html>
+

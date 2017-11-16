@@ -1,0 +1,17 @@
+﻿@model GoTApp.Models.GoTCharacter
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adding new character</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+        @using (Html.BeginForm("gotcharacter/add", "gotcharacter"))
+        { 
+            @Html.LabelFor(x => x.Name)@Html.TextBoxFor(x => x.Name)<br>
+            @Html.LabelFor(x => x.IsAlive)@Html.CheckBoxFor(x => x.IsAlive)<br>
+            @Html.LabelFor(x => x.IsLikeable)@Html.CheckBoxFor(x => x.IsLikeable)<br>
+            <button type="submit">Submit</button>
+        }
+</body>
+</html>

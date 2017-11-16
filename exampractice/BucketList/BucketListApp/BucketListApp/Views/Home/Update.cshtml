@@ -1,0 +1,19 @@
+﻿@model BucketListApp.Models.BucketList
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update your BucketList Wish</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    @using (Html.BeginForm("/{id}/update", "home"))
+    {
+        <input type="hidden" name="Id" value="@Model.Id">
+        @Html.LabelFor(x => x.Activity)@Html.TextBoxFor(x => x.Activity)<br />
+        @Html.LabelFor(x => x.IsPlanned)@Html.CheckBoxFor(x => x.IsPlanned)<br />
+        @Html.LabelFor(x => x.IsAchieved)@Html.CheckBoxFor(x => x.IsAchieved)<br />
+        <button type="submit">Submit</button>
+    }
+    <h2><a href="/">Cancel</a></h2>
+</body>
+</html>

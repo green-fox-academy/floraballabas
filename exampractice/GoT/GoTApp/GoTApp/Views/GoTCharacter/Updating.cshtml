@@ -1,0 +1,20 @@
+﻿@model GoTApp.Models.GoTCharacter
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Update Character</title>
+</head>
+<body>
+    <h1>Edit your character</h1>
+    @using (Html.BeginForm("update", "gotcharacter"))
+    {
+        <input type="hidden" name="Id" value="@Model.Id">
+        @Html.LabelFor(x => x.Name)@Html.TextBoxFor(x => x.Name)<br />
+        @Html.LabelFor(x => x.IsAlive)@Html.CheckBoxFor(x => x.IsAlive)<br />
+        @Html.LabelFor(x => x.IsLikeable)@Html.CheckBoxFor(x => x.IsLikeable)<br />
+        <button type="submit">Submit</button>
+    }
+    <h2><a href="/gotcharacter">Cancel</a></h2>
+</body>
+</html>
+
